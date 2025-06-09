@@ -1,3 +1,6 @@
+import os
+os.environ["MLXLM_USE_MODELSCOPE"] = "true" # https://github.com/ml-explore/mlx-lm/blob/f009881e5c363de6762b7922a5154efb57d85ff4/mlx_lm/utils.py#L26
+
 from mlx_lm import load
 import mlx_lm
 import mlx.core as mx

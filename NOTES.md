@@ -82,3 +82,21 @@
 
     $ pdm install -v
     ```
+
+2. download model from modelscope instead of huggingface
+
+    下载模型 Qwen/Qwen2-7B-Instruct-MLX
+
+    ```shell
+    pip3 install modelscope
+    modelscope download --model Qwen/Qwen2-7B-Instruct-MLX
+    # or
+    python3 -c 'from modelscope import snapshot_download; snapshot_download("Qwen/Qwen2-7B-Instruct-MLX")'
+    ```
+
+    配置环境变量使 mlxlm 使用从 modelscope 下载的模型
+
+    ```shell
+    $ export MLXLM_USE_MODELSCOPE=true
+    $ pdm run main --solution ref --loader week1
+    ```
