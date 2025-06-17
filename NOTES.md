@@ -99,4 +99,23 @@
     ```shell
     $ export MLXLM_USE_MODELSCOPE=true
     $ pdm run main --solution ref --loader week1
-    ```
+    ``j
+
+# [Week 1: From Matmul to Text](https://skyzh.github.io/tiny-llm/week1-overview.html)
+
+1. TODO, try to implement Tokenizer, Model Loader manually
+
+# [Week 1 Day 1: Attention and Multi-Head Attention](https://skyzh.github.io/tiny-llm/week1-01-attention.html)
+
+1. [~~Attention~~ 李沐 is All You Need](https://www.bilibili.com/video/BV1pu411o7BE)
+
+2. Transformer 的解码器最后输出的概率分布是什么？如何计算的？
+
+    假设输入的序列长为 L，嵌入维度为 D，词汇表大小为 N，则最后一个 transformer 块的输出是一个 LxD 的矩阵，我们取最后一行，即最后一个 token 对应的向量，输入到一个 DxN 的线性层，再经过 softmax 归一化，便得到这一概率分布，表示当前上文下接下来一个 token 是词汇表中各个词的概率
+
+# [Week 1 Day 2: Positional Encodings and RoPE](https://skyzh.github.io/tiny-llm/week1-02-positional-encodings.html)
+
+1. [设计位置编码](https://huggingface.co/blog/zh/designing-positional-encoding)一文中总结了
+- 一种好的位置编码方法应该具备的属性：唯一性、线性性、泛化性、确定性、可升维
+- 从整数位置编码，到归一化的整数位置编码，到二进制位置编码，到正弦位置编码，到旋转位置编码
+- 旋转位置编码名称中的旋转二字来自于[旋转矩阵](https://en.wikipedia.org/wiki/Rotation_matrix)
