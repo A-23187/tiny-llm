@@ -25,7 +25,7 @@ def rope_helper(
             )
 
             if with_offset:
-                input_pos = np.random.randint(0, MAX_SEQ_LEN - SEQ_LEN)
+                input_pos = np.random.randint(0, MAX_SEQ_LEN - SEQ_LEN + 1)
                 input_pos_mx = input_pos
                 input_pos_user = slice(input_pos, input_pos + SEQ_LEN)
             else:
